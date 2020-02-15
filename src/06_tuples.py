@@ -17,6 +17,7 @@ automatically.
 
 import math
 
+
 def dist(a, b):
     """Compute the distance between two x,y points."""
     x0, y0 = a  # Destructuring assignment
@@ -30,11 +31,18 @@ b = (-14, 72)
 # Prints "Distance is 66.94"
 print("Distance is: {:.2f}".format(dist(a, b)))
 
-
-
 # Write a function `print_tuple` that prints all the values in a tuple
 
 # YOUR CODE HERE
+
+
+def print_tuple(tup):
+    """prints all elements in a tuple"""
+    if isinstance(tup, tuple):
+        for element in tup:
+            print(element)
+    else:
+        print(a)
 
 t = (1, 2, 5, 7, 99)
 print_tuple(t)  # Prints 1 2 5 7 99, one per line
