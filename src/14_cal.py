@@ -81,23 +81,22 @@ def create_cal_days(year, month):
 def create_cal():
     if len(sys.argv) == 1:
         year, month = get_current_year_and_month()
-        header = get_cal_header(year, month)
-        cal = create_cal_days(year, month)
-        print(f"{header}\n{cal}")
     elif len(sys.argv) == 2:
         _, m = sys.argv
         month = int(m)
         year = get_year()
-        header = get_cal_header(year, month)
-        cal = create_cal_days(year, month)
-        print(f"{header}\n{cal}")
     elif len(sys.argv) == 3:
         _, m, y = sys.argv
         year = int(y)
         month = int(m)
-        header = get_cal_header(year, month)
-        cal = create_cal_days(year, month)
-        print(f"{header}\n{cal}")
+    else:
+        print("""Expected either no argument, for the current month and date, a
+single argument for a month in the current year, or two arguments
+for the month and year you would like printed out""")
+        return
+    header = get_cal_header(year, month)
+    cal = create_cal_days(year, month)
+    print(f"{header}\n{cal}")
 
 
 create_cal()
